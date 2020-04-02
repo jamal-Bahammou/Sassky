@@ -22,7 +22,7 @@
     
     &:active {
         transform: translateY(-.1rem);
-        box-shadow: 0 .5rem .1rem rgba($color-black, .2);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
     }
     
     &--white {
