@@ -35,14 +35,12 @@
 
         opacity: 0;
         width: 0;
+        visibility: hidden;
         transition: all .8s  cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
 
     &__list {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include absCenter;
         list-style: none;
         text-align: center;
     }
@@ -75,6 +73,7 @@
             color: $color-primary;
             transform: translateX(1rem);
         }
+
     }
 
     &__icon {
@@ -99,7 +98,7 @@
         &::after { top: .8rem; }
     }
 
-    // :boom: HOVER THE BUTTON ANIMATION
+    // :boom: HOVER THE BUTTON ANIMATION ----------------------------------------------------------
 
     &__button:hover &__icon {
 
@@ -112,7 +111,7 @@
         }
     }
 
-    // :boom: CHECK THE BOX ANIMATION
+    // :boom: CHECK THE BOX ANIMATION -------------------------------------------------------------
 
     &__checkbox {
         display: none;
@@ -126,6 +125,7 @@
     &__checkbox:checked ~ &__nav {
         opacity: 1;
         width: 100%;
+        visibility: visible;
     }
 
     &__checkbox:checked + &__button &__icon {
