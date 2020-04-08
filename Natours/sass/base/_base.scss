@@ -1,15 +1,33 @@
-/* UNIVERSAL SELECTOR --------------------------------------------------------------- */
+// UNIVERSAL SELECTOR -----------------------------------------------------------------------------
 *, *::after, *::before {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
 }
 
-/* ROOT SELECTOR -------------------------------------------------------------------- */
+// ROOT SELECTOR ----------------------------------------------------------------------------------
 html {
-    font-size: 62.5%;
+    // THIS DEFINE WHAT 1rem IS
+    font-size: 62.5%; // 1rem = 10px - 10/16 = 62.5%
+
+    @include respond(tab-land) { // 📱📱📱
+        font-size: 56.25%; // width < 1200px 1rem = 9px - 9/16 = 56.25%
+    }
+
+    @include respond(tab-port) { // 📱📱
+        font-size: 50%; // width < 900px 1rem = 8px - 8/6 = 50%  
+    }
+
+    @include respond(big-desktop) { // 🖥
+        font-size: 75%; // width > 1800px 1rem = 12px - 12/16 = 75%
+    }
 }
 
 body {
     box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port){ // 📱📱
+        padding: 0;
+    }
 }
